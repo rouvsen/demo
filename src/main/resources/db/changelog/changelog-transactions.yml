@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: rouvsen
+      changes:
+        - createTable:
+            tableName: transactions
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: type
+                  type: varchar(255)
+              - column:
+                  name: amount
+                  type: double
+              - column:
+                  name: has_cashback
+                  type: boolean
+              - column:
+                  name: card_id
+                  type: int
+                  constraints:
+                    foreignKeyName: fk_transactions_cards
+                    references: cards(id)
+              - column:
+                  name: created_at
+                  type: timestamp

@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: changelog-cards.yml
+      relativeToChangelogFile: true
+  - include:
+      file: changelog-transactions.yml
+      relativeToChangelogFile: true

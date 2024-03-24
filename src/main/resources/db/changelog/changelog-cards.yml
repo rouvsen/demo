@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: rouvsen
+      changes:
+        - createTable:
+            tableName: cards
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: pan
+                  type: varchar(255)
+              - column:
+                  name: customer_id
+                  type: int
+              - column:
+                  name: balance
+                  type: double
+              - column:
+                  name: created_at
+                  type: timestamp
